@@ -15,6 +15,8 @@ class model_rol extends conexion
     {
         $datos = $this->obtenerDatos(); // OBTENEMOS LOS DATOS DE CONEXION.
         $this->data_conexion = mysqli_connect($datos['local'], $datos['user'], $datos['password'], $datos['database']); // SE CREA LA CONEXION A LA BASE DE DATOS.
+        mysqli_query($this->data_conexion, "SET NAMES 'utf8'");
+        
     }
 
     // FUNCION PARA CERRAR CONEXION.
